@@ -1,0 +1,37 @@
+2024-08-04 16:55:17.378+0000 INFO  Logging config in use: Embedded default config 'default-user-logs.xml'
+2024-08-04 16:55:17.397+0000 INFO  Starting...
+2024-08-04 16:55:19.089+0000 INFO  This instance is ServerId{6222f92c} (6222f92c-8565-411f-a529-b6f21a7755ac)
+2024-08-04 16:55:21.197+0000 INFO  ======== Neo4j 5.22.0 ========
+2024-08-04 16:55:25.199+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2024-08-04 16:55:25.542+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2024-08-04 16:55:26.440+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2024-08-04 16:55:26.445+0000 INFO  Remote interface available at http://localhost:7474/
+2024-08-04 16:55:26.455+0000 INFO  id: 20C6265BA34098E7DD582392E81827D1DF9D006A81B8696126101DA9450FA854
+2024-08-04 16:55:26.457+0000 INFO  name: system
+2024-08-04 16:55:26.460+0000 INFO  creationDate: 2024-08-04T16:55:22.777Z
+2024-08-04 16:55:26.462+0000 INFO  Started.
+2024-08-04 23:36:06.395+0000 ERROR Client triggered an unexpected error [Neo.DatabaseError.Schema.ConstraintCreationFailed]: Unable to create Constraint( name='constraint_42a79aaf', type='UNIQUENESS', schema=(:Movie {title}) ):
+Both Node(173) and Node(217) have the label `Movie` and property `title` = 'My Life'. Note that only the first found violation is shown., reference df01e70e-b126-4aa1-8a2f-c70fe5013b64.
+2024-08-04 23:37:36.749+0000 ERROR Client triggered an unexpected error [Neo.DatabaseError.Schema.ConstraintCreationFailed]: Unable to create Constraint( name='constraint_42a79aaf', type='UNIQUENESS', schema=(:Movie {title}) ):
+Both Node(173) and Node(217) have the label `Movie` and property `title` = 'My Life'. Note that only the first found violation is shown., reference 77e56a89-0199-42b1-a564-e10bef75f623.
+2024-08-04 23:39:59.981+0000 INFO  Neo4j Server shutdown initiated by request
+2024-08-04 23:39:59.985+0000 INFO  Stopping...
+2024-08-04 23:40:53.929+0000 INFO  Logging config in use: Embedded default config 'default-user-logs.xml'
+2024-08-04 23:40:53.957+0000 INFO  Starting...
+2024-08-04 23:40:55.924+0000 INFO  This instance is ServerId{6222f92c} (6222f92c-8565-411f-a529-b6f21a7755ac)
+2024-08-04 23:40:58.290+0000 INFO  ======== Neo4j 5.22.0 ========
+2024-08-04 23:41:02.243+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2024-08-04 23:41:07.387+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2024-08-04 23:41:09.876+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2024-08-04 23:41:09.884+0000 INFO  Remote interface available at http://localhost:7474/
+2024-08-04 23:41:09.897+0000 INFO  id: 20C6265BA34098E7DD582392E81827D1DF9D006A81B8696126101DA9450FA854
+2024-08-04 23:41:09.905+0000 INFO  name: system
+2024-08-04 23:41:09.908+0000 INFO  creationDate: 2024-08-04T16:55:22.777Z
+2024-08-04 23:41:09.912+0000 INFO  Started.
+2024-08-04 23:41:44.227+0000 ERROR Client triggered an unexpected error [Neo.DatabaseError.Schema.ConstraintCreationFailed]: Unable to create Constraint( name='constraint_42a79aaf', type='UNIQUENESS', schema=(:Movie {title}) ):
+Both Node(173) and Node(217) have the label `Movie` and property `title` = 'My Life'. Note that only the first found violation is shown., reference 6f408e29-466a-4655-8112-447101198ebe.
+2024-08-04 23:44:06.852+0000 ERROR Client triggered an unexpected error [Neo.DatabaseError.Schema.ConstraintCreationFailed]: Unable to create Constraint( name='constraint_42a79aaf', type='UNIQUENESS', schema=(:Movie {title}) ):
+Both Node(173) and Node(217) have the label `Movie` and property `title` = 'My Life'. Note that only the first found violation is shown., reference 63eb3fe1-9af5-4ccb-94d4-462dd38d3f3f.
+2024-08-05 00:02:05.521+0000 ERROR Client triggered an unexpected error [Neo.DatabaseError.Schema.ConstraintCreationFailed]: Unable to create Constraint( name='constraint_42a79aaf', type='UNIQUENESS', schema=(:Movie {title}) ):
+Both Node(0) and Node(7) have the label `Movie` and property `title` = 'My Life'. Note that only the first found violation is shown., reference 84addf27-d643-4dc8-9bdc-4b08cf5b62b2.
+2024-08-05 00:11:19.589+0000 INFO  Neo4j Server shutdown initiated by request
