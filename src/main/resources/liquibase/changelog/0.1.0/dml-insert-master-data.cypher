@@ -4,8 +4,12 @@
 
 CREATE CONSTRAINT IF NOT EXISTS FOR (p:Person) REQUIRE (p.name) IS UNIQUE;
 CREATE INDEX IF NOT EXISTS FOR (p:Person) ON (p.born);
+
+DROP CONSTRAINT ON (m:Movie) ASSERT m.title IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (m:Movie) REQUIRE (m.title) IS UNIQUE;
 CREATE INDEX IF NOT EXISTS FOR (m:Movie) ON (m.released);
+
+CREATE CONSTRAINT FOR (p:Person) REQUIRE p.userId IS UNIQUE;
 
 CREATE (TheMatrix:Movie {title:'The Matrix', released:1999, tagline:'Welcome to the Real World'})
 CREATE (Keanu:Person {name:'Keanu Reeves', born:1964})
