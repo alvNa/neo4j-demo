@@ -4,10 +4,6 @@
                    xmlns:neo4j="http://www.liquibase.org/xml/ns/dbchangelog-ext"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
-<!--    <include file="classpath:liquibase/changelog/0.1.0/1.xml"/>-->
-
     <include file="classpath:liquibase/changelog/0.1.0/ddl-initial-db-constraints.cypher"/>
     <include file="classpath:liquibase/changelog/0.1.0/ddl-initial-db-data.cypher"/>
-<!--    <include file="classpath:liquibase/changelog/0.1.0/dml-insert-master-data.cypher"/>-->
-
 </databaseChangeLog>

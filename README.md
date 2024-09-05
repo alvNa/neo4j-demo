@@ -7,6 +7,12 @@ neo4j-demo
 docker-compose up -d
 ```
 
+## Go Neo4J DB Admin
+
+- http://localhost:7474/browser/
+User: neo4j
+Pass: password
+
 ## Queries
 
 - List full graph DB
@@ -88,7 +94,7 @@ MATCH (m:Movie {title: 'The Matrix'})<-[d:DIRECTED]-(p:Person)
 RETURN p.name as director;
 ```
 
--- Query     movies where Keanu Reeves acted in order by date
+-- Query movies where Keanu Reeves acted in order by date
 ```cypher
 MATCH (m:Movie)<-[a:ACTED_IN]-(p:Person)
 WHERE p.name ='Keanu Reeves'
@@ -97,8 +103,7 @@ ORDER BY m.released DESC
 ```
 
 
-
 ## References
 - https://medium.com/@ankshukray/mastering-neo4j-with-spring-boot-a-complete-guide-with-configuration-and-examples-939bde3d17c4
 - https://neo4j.com/docs/cypher-manual/current/queries/basic/
-- 
+- https://medium.com/@cat.edelveis/using-liquibase-with-spring-boot-tutorial-79245a0b79a6

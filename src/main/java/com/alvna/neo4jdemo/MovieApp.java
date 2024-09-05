@@ -7,12 +7,14 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.data.jdbc.JdbcRepositoriesAutoConfiguration;
 //import org.springframework.data.neo4j.config.EnableNeo4jAuditing;
-//import org.springframework.data.neo4j.repository.config.EnableNeo4jRepositories;
+import org.springframework.data.neo4j.repository.config.EnableNeo4jRepositories;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 
 @SpringBootApplication
 @EnableAutoConfiguration(exclude = {JdbcRepositoriesAutoConfiguration.class})
-//@EnableNeo4jRepositories
+@EnableNeo4jRepositories
+@EnableScheduling
 //@EnableNeo4jAuditing
 public class MovieApp
 {
