@@ -102,7 +102,7 @@ RETURN m.title, a.roles, m.released
 ORDER BY m.released DESC
 ```
 
--- We want to add a couple of User nodes
+- We want to add a couple of User nodes
 ```cypher
 MERGE (u:User {userId: 534})
 SET u.name = "Sandy Jones";
@@ -111,15 +111,20 @@ MERGE (u:User {userId: 105})
 SET u.name = "Clinton Spencer";
 ```
 
+- List procedures
+```cypher
 SHOW PROCEDURES yield name, description, signature
+```
 
-
+- Load JSON example
+```cypher
 WITH 'https://raw.githubusercontent.com/neo4j/apoc/5.23/core/src/test/resources/person.json' AS url
 
 CALL apoc.load.json(url) YIELD value as person
 
 MERGE (p:Person {name:person.name})
 ON CREATE SET p.age = person.age, p.children = size(person.children)
+```
 
 ## References
 - https://medium.com/@ankshukray/mastering-neo4j-with-spring-boot-a-complete-guide-with-configuration-and-examples-939bde3d17c4
