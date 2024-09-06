@@ -9,8 +9,14 @@ services:
     restart: unless-stopped
     environment:
       - NEO4J_AUTH=neo4j/password
+      - NEO4J_apoc_export_file_enabled=true
+      - NEO4J_apoc_import_file_enabled=true
+      - NEO4J_apoc_import_file_use__neo4j__config=true
+      - NEO4J_dbms_security_procedures_unrestricted="apoc.cypher.*"
+      - NEO4J_PLUGINS=["apoc", "apoc-extended"]
     volumes:
       - /tmp/db/data:/data
       - /tmp/db/conf:/conf
       - /tmp/db/logs:/logs
-      - /tmp/db/plugins:/plugins
+      - /tmp/neo4j/plugins:/plugins
+        
