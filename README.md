@@ -81,20 +81,20 @@ RETURN bornInEighties.name as name, bornInEighties.born as born
   ORDER BY born DESC
 ```
 
--- Load CSV
+- Load CSV
 ```cypher
 LOAD CSV WITH HEADERS FROM "https://data.neo4j.com/northwind/categories.csv" AS row
 CREATE (n:Category)
 SET n = row
 ```
 
--- Queries using relations
+- Queries using relations
 ```cypher
 MATCH (m:Movie {title: 'The Matrix'})<-[d:DIRECTED]-(p:Person)
 RETURN p.name as director;
 ```
 
--- Query movies where Keanu Reeves acted in order by date
+- Query movies where Keanu Reeves acted in order by date
 ```cypher
 MATCH (m:Movie)<-[a:ACTED_IN]-(p:Person)
 WHERE p.name ='Keanu Reeves'
@@ -102,8 +102,33 @@ RETURN m.title, a.roles, m.released
 ORDER BY m.released DESC
 ```
 
+- We want to add a couple of User nodes
+```cypher
+MERGE (u:User {userId: 534})
+SET u.name = "Sandy Jones";
+
+MERGE (u:User {userId: 105})
+SET u.name = "Clinton Spencer";
+```
+
+- List procedures
+```cypher
+SHOW PROCEDURES yield name, description, signature
+```
+
+- Load JSON example
+```cypher
+WITH 'https://raw.githubusercontent.com/neo4j/apoc/5.23/core/src/test/resources/person.json' AS url
+
+CALL apoc.load.json(url) YIELD value as person
+
+MERGE (p:Person {name:person.name})
+ON CREATE SET p.age = person.age, p.children = size(person.children)
+```
 
 ## References
 - https://medium.com/@ankshukray/mastering-neo4j-with-spring-boot-a-complete-guide-with-configuration-and-examples-939bde3d17c4
 - https://neo4j.com/docs/cypher-manual/current/queries/basic/
 - https://medium.com/@cat.edelveis/using-liquibase-with-spring-boot-tutorial-79245a0b79a6
+- https://graphacademy.neo4j.com/courses/modeling-fundamentals
+- https://github.com/neo4j/apoc

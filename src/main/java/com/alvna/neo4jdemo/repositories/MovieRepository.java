@@ -7,9 +7,6 @@ import org.springframework.data.neo4j.repository.query.Query;
 import java.util.List;
 
 public interface MovieRepository extends Neo4jRepository<Movie, Long> {
-//    @Query("MATCH (p:Person)-[:FOLLOWS]->(f:Person) WHERE p.name = $name RETURN f")
-//    List<Movie> findFollowersByName(String name);
-
     @Query("""
         MATCH (m:Movie)<-[a:ACTED_IN]-(p:Person) 
         WHERE p.name = $name
