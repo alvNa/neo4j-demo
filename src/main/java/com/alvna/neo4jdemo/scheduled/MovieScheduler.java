@@ -22,6 +22,9 @@ public class MovieScheduler {
         var result = movieRepository.findAll();
         log.info("{} movies ",result.size());
 
+        var myMovies2 = movieRepository.findMoviesByActor("James");
+        log.info("{} movies2 ", myMovies2);
+
         var persons = personRepository.findAll();
         log.info("{} persons ",persons.size());
     }
