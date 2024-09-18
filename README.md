@@ -22,7 +22,6 @@ Pass: password
 - [Advanced Queries](doc/advanced-queries.md)
 
 
-
 ## References
 - https://medium.com/@ankshukray/mastering-neo4j-with-spring-boot-a-complete-guide-with-configuration-and-examples-939bde3d17c4
 - https://neo4j.com/docs/cypher-manual/current/queries/basic/
