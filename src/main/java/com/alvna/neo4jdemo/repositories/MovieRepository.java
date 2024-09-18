@@ -16,10 +16,10 @@ public interface MovieRepository extends Neo4jRepository<Movie, Long> {
     List<Movie> findMoviesWithActor(String name);
 
     @Query("""
-        MATCH (keanu:Person)-[:ACTED_IN]->(movie:Movie)
-        WHERE keanu.name =~ $actor +'.*'
-        WITH keanu, collect(movie{.title, .released}) AS movies
-        RETURN keanu{.name, movies: movies}
+        MATCH (p:Person)-[:ACTED_IN]->(movie:Movie)
+        WHERE p.name =~ $actor +'.*'
+        WITH p, collect(movie{.title, .released}) AS movies
+        RETURN p{.name, movies: movies}
         """)
     List<Map<String,Map<String,Object>>> findMoviesByActor(String actor);
 }
